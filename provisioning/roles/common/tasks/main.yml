@@ -1,0 +1,6 @@
+# Install common componants required on the VM/VMs to support required functionality.
+#
+  - name: Install the EPEL Repository
+    yum:
+      name:  https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+      state: installed

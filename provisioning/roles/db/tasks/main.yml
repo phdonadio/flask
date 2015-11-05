@@ -1,0 +1,18 @@
+# Install MonoDB Server.
+#
+
+- name: Install MongoDB Server
+  yum:
+    name: mongodb-server
+    state: installed
+  
+- name: Enable MongoDB Service
+  service:
+    name: mongod.service
+    enabled: yes
+
+- name: Start MongoDB
+  service:
+    name: mongod.service
+    state: started
+

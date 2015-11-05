@@ -1,0 +1,7 @@
+# Handler for restarting the Data Base process.
+#
+
+- name: Restart MongoDB
+  service:
+    name: mongod.service
+    state: restarted

@@ -1,0 +1,17 @@
+# Install the required packages to support the flask application.
+- name: Installing flask
+  yum:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+    - python-flask
+    - python-pip
+
+# The following python modules are not packaged for CentOS.
+# The remaining modules are being installed directly from 
+# the Python Package Index
+- name: Installing flask modules from pypi
+  shell: /usr/bin/pip install {{ item }}
+  with_items:
+    - flask-restful
+    - flask-pymongo 

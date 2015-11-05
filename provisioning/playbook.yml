@@ -1,0 +1,22 @@
+# Ansible playbook to install a custom Flask web based application.
+# The application requires EPEL repository, MongoDB server, python MongoDB client,
+# Flask and Flask-restful packages.
+#
+
+- name: Apply common configuration
+  hosts: flask
+
+  roles:
+    - common
+
+- name: Install data base server
+  hosts: flask
+  
+  roles:
+    - db
+
+- name: Install web server
+  hosts: flask
+
+  roles:
+    - web
